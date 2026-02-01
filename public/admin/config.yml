@@ -1,0 +1,173 @@
+backend:
+  name: github
+  repo: owner/repo
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "global"
+    label: "Global"
+    files:
+      - name: "global"
+        label: "Site settings"
+        file: "content/global.json"
+        fields:
+          - { label: "Site name", name: "siteName", widget: "string" }
+          - {
+              label: "Default meta title",
+              name: "defaultMetaTitle",
+              widget: "string",
+            }
+          - {
+              label: "Default meta description",
+              name: "defaultMetaDescription",
+              widget: "string",
+            }
+          - label: "Nav items"
+            name: "navItems"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Href", name: "href", widget: "string" }
+
+  - name: "home"
+    label: "Home page"
+    files:
+      - name: "home"
+        label: "Home"
+        file: "content/home.md"
+        fields:
+          - { label: "Hero headline", name: "heroHeadline", widget: "string" }
+          - { label: "Hero subtext", name: "heroSubtext", widget: "text" }
+          - { label: "Hero CTA text", name: "heroCtaText", widget: "string" }
+          - { label: "About heading", name: "aboutHeading", widget: "string" }
+          - { label: "About body", name: "aboutBody", widget: "text" }
+          - {
+              label: "About CTA Learn",
+              name: "aboutCtaLearn",
+              widget: "string",
+            }
+          - {
+              label: "About CTA Contact",
+              name: "aboutCtaContact",
+              widget: "string",
+            }
+          - { label: "CTA headline", name: "ctaHeadline", widget: "string" }
+          - { label: "CTA body", name: "ctaBody", widget: "text" }
+          - {
+              label: "CTA Email label",
+              name: "ctaEmailLabel",
+              widget: "string",
+            }
+          - { label: "CTA Email href", name: "ctaEmailHref", widget: "string" }
+          - {
+              label: "CTA LinkedIn label",
+              name: "ctaLinkedInLabel",
+              widget: "string",
+            }
+          - {
+              label: "CTA LinkedIn href",
+              name: "ctaLinkedInHref",
+              widget: "string",
+            }
+
+  - name: "about"
+    label: "About page"
+    files:
+      - name: "about"
+        label: "About"
+        file: "content/about.md"
+        fields:
+          - { label: "Hero statement", name: "heroStatement", widget: "text" }
+          - label: "Recognition items"
+            name: "recognitionItems"
+            widget: "list"
+            fields:
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+          - { label: "Founder name", name: "founderName", widget: "string" }
+          - {
+              label: "Founder image",
+              name: "founderImage",
+              widget: "image",
+              required: false,
+            }
+          - { label: "Contact phone", name: "contactPhone", widget: "string" }
+          - { label: "Contact email", name: "contactEmail", widget: "string" }
+          - { label: "Contact social", name: "contactSocial", widget: "string" }
+          - {
+              label: "Mid section image",
+              name: "midSectionImage",
+              widget: "image",
+              required: false,
+            }
+          - {
+              label: "Established year",
+              name: "establishedYear",
+              widget: "string",
+            }
+
+  - name: "contact"
+    label: "Contact page"
+    files:
+      - name: "contact"
+        label: "Contact"
+        file: "content/contact.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - label: "Regions"
+            name: "regions"
+            widget: "list"
+            fields:
+              - { label: "Region", name: "region", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - {
+                      label: "Email",
+                      name: "email",
+                      widget: "string",
+                      required: false,
+                    }
+                  - {
+                      label: "Phone",
+                      name: "phone",
+                      widget: "string",
+                      required: false,
+                    }
+          - { label: "Mid phone", name: "midPhone", widget: "string" }
+          - { label: "Mid email", name: "midEmail", widget: "string" }
+
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Short description", name: "shortDescription", widget: "text" }
+      - { label: "Body (long description)", name: "body", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - {
+          label: "Hero image",
+          name: "heroImage",
+          widget: "image",
+          required: false,
+        }
+      - {
+          label: "Video URL",
+          name: "videoUrl",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Live URL",
+          name: "liveUrl",
+          widget: "string",
+          required: false,
+        }

@@ -1,0 +1,10 @@
+{
+  "siteName": "JT",
+  "defaultMetaTitle": "JT Portfolio 2026",
+  "defaultMetaDescription": "Portfolio — JT 2026",
+  "navItems": [
+    { "label": "About", "href": "/about" },
+    { "label": "Work", "href": "/work" },
+    { "label": "Contact", "href": "/contact" }
+  ]
+}

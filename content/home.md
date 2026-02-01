@@ -1,0 +1,15 @@
+---
+heroHeadline: "DESIGN & BUILD"
+heroSubtext: "Creative developer crafting thoughtful digital experiences."
+heroCtaText: "View Work"
+aboutHeading: "ABOUT"
+aboutBody: "I design and build interfaces and experiences that are clear, fast, and accessible. Based wherever you need me — always open to new projects and collaboration."
+aboutCtaLearn: "Learn more"
+aboutCtaContact: "Get in Touch"
+ctaHeadline: "LET'S WORK TOGETHER"
+ctaBody: "Have a project in mind? Get in touch — I'd love to hear from you."
+ctaEmailLabel: "Email"
+ctaEmailHref: "mailto:hello@example.com"
+ctaLinkedInLabel: "LinkedIn"
+ctaLinkedInHref: "#"
+---

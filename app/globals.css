@@ -2,25 +2,114 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
 }
 
+/* Style guide tokens — Figma node 8-98 (JT Portfolio 2026 v2) */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-staatliches), sans-serif;
+  --font-link: var(--font-jaro), sans-serif;
+
+  /* Colors from style guide */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-accent: #0f0f0f;
+  --color-bg: #ffffff;
+  --color-bg2: #cd9d65;
+  --color-bg3: #000000;
+  --color-body: #000000;
+  --color-body-on-bg2: #ffffff;
+  --color-headline: #000000;
+  --color-headline-on-bg2: #ffffff;
+  --color-link: #000000;
+  --color-paragraph: #000000;
+  --color-paragraph2: #7c7c7c;
+  --color-divider: #000000;
+  --color-divider2: #ffffff;
+  --color-divider-line: #e9e9e9;
+  --color-divider-light: #e0e0e0;
+
+  /* Legacy aliases for components */
+  --color-accent-on-bg2: #613b0f;
+
+  /* Typography scale from style guide */
+  --text-display: 150px;
+  --text-heading-1: 60px;
+  --text-heading-2: 42px;
+  --text-heading-3: 30px;
+  --text-body: 20px;
+  --text-link: 26px;
+  --text-caption: 14px;
+  --text-caption2: 28.8px;
+  --text-caption3: 17.6px;
+  --text-caption4: 27.5px;
+  --text-paragraph: 12px;
+
+  --font-sans: var(--font-staatliches), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Typography utility classes aligned to style guide */
+.text-display {
+  font-family: var(--font-staatliches), sans-serif;
+  font-size: clamp(2.5rem, 8vw, 150px);
+  font-weight: 400;
+  line-height: 0.8;
+  letter-spacing: 0.01em;
+}
+.text-heading-1 {
+  font-family: var(--font-staatliches), sans-serif;
+  font-size: clamp(2rem, 4vw, 60px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+.text-heading-2 {
+  font-family: var(--font-staatliches), sans-serif;
+  font-size: clamp(1.75rem, 3vw, 42px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+}
+.text-heading-3 {
+  font-family: var(--font-staatliches), sans-serif;
+  font-size: clamp(1.25rem, 2vw, 30px);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+.text-body-style {
+  font-family: var(--font-staatliches), sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.39;
+  letter-spacing: 0.01em;
+}
+.text-link-style {
+  font-family: var(--font-jaro), sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.39;
+  letter-spacing: -0.02em;
+}
+.text-caption-style {
+  font-family: var(--font-geist), sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+}
+.text-paragraph-style {
+  font-family: var(--font-figtree), sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-staatliches), sans-serif;
 }
