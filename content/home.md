@@ -1,9 +1,9 @@
 ---
-heroHeadline: "DESIGN & BUILD"
-heroSubtext: "Design Technologist at Amazon. Full stack engineer crafting web and mobile experiences. Brooklyn, NY."
+heroHeadline: "JACK TRANSUE"
+heroSubtext: "Design Technologist at Amazon. Full stack engineer crafting web, TV, and mobile experiences."
 heroCtaText: "View Work"
 aboutHeading: "ABOUT"
-aboutBody: "I'm a full stack engineer with extensive background in B2B and B2C SaaS development, particularly in web and mobile applications. My expertise includes JavaScript, Vue (Nuxt.js), React (Next.js), AWS Lambda, Serverless, SQL, Node.js, Python, Django, and NestJS. Always open to new projects and collaboration."
+aboutBody: "I'm a design technologist with extensive background in in the oddities, particularly in web and mobile applications. I'm at my best when collaborating with a like minded product designer, building out ground breaking projects that intersect the latest technology with the latest trends."
 aboutCtaLearn: "Learn more"
 aboutCtaContact: "Get in Touch"
 ctaHeadline: "LET'S WORK TOGETHER"

@@ -114,6 +114,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
         {/* Additional sections from ## headings */}
         {contentSections.map((sec, i) => {
           const isAlt = i % 2 === 0;
+          const sectionImage = project.sectionImages?.[i];
           return (
             <section
               key={sec.title ?? i}
@@ -124,6 +125,18 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
               }
             >
               <div className="mx-auto max-w-4xl">
+                {sectionImage && (
+                  <div className="mb-10 aspect-[21/9] w-full overflow-hidden rounded border border-[var(--color-divider-light)] md:mb-12">
+                    <Image
+                      src={sectionImage}
+                      alt={sec.title ?? "Section"}
+                      width={840}
+                      height={360}
+                      className="h-full w-full object-cover"
+                      sizes="(max-width: 896px) 100vw, 896px"
+                    />
+                  </div>
+                )}
                 {sec.title && (
                   <h2 className="text-heading-3 mb-8 text-[var(--color-headline)] md:mb-10 first:mt-0">
                     {isAlt ? (

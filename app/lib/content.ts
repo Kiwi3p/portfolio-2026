@@ -113,10 +113,11 @@ export async function getContactPage(): Promise<ContactPageData | null> {
 function mapFileToProject(
   slug: string,
   data: Record<string, unknown>,
-  body: string,
+  body: string
 ): Project {
   const image = data.image as string | undefined;
   const heroImage = data.heroImage as string | undefined;
+  const sectionImages = data.sectionImages as (string | null)[] | undefined;
   return {
     slug,
     title: (data.title as string) ?? "",
@@ -128,6 +129,7 @@ function mapFileToProject(
     videoUrl: (data.videoUrl as string) ?? null,
     liveUrl: (data.liveUrl as string) ?? null,
     githubUrl: (data.githubUrl as string) ?? null,
+    sectionImages: Array.isArray(sectionImages) ? sectionImages : undefined,
   };
 }
 
@@ -153,7 +155,7 @@ export async function getAllProjects(): Promise<Project[]> {
 }
 
 export async function getProjectBySlug(
-  slug: string,
+  slug: string
 ): Promise<Project | undefined> {
   const projects = await getAllProjects();
   return projects.find((p) => p.slug === slug);

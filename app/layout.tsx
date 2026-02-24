@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { Staatliches, Jaro, Figtree, Geist } from "next/font/google";
+import {
+  Staatliches,
+  Jaro,
+  Figtree,
+  Geist,
+  Montserrat,
+} from "next/font/google";
 import { getGlobal } from "@/app/lib/content";
 import "./globals.css";
 
@@ -27,6 +33,13 @@ const geist = Geist({
   variable: "--font-geist",
 });
 
+/** Body copy — geometric sans, Gotham-like. Easy to read at 20px. */
+const montserrat = Montserrat({
+  weight: ["400", "500", "600"],
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
+
 export async function generateMetadata(): Promise<Metadata> {
   const global = await getGlobal();
   return {
@@ -43,7 +56,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${staatliches.variable} ${jaro.variable} ${figtree.variable} ${geist.variable}`}
+      className={`${staatliches.variable} ${jaro.variable} ${figtree.variable} ${geist.variable} ${montserrat.variable}`}
     >
       <body className="min-h-screen antialiased">{children}</body>
     </html>

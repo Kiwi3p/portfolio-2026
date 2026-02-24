@@ -8,6 +8,8 @@ export type Project = {
   videoUrl?: string | null;
   liveUrl?: string | null;
   githubUrl?: string | null;
+  /** Optional image per content section (by index). Shown in orange/tan sections when present. */
+  sectionImages?: (string | null)[];
 };
 
 const projects: Project[] = [
