@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { motion, useAnimationControls } from "motion/react";
 
-const ease = [0.25, 0.1, 0.25, 1];
+const ease = [0.25, 0.1, 0.25, 1] as const;
 
 export function PageTransition({ children }: { children: React.ReactNode }) {
   const router = useRouter();
