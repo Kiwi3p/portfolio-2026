@@ -1,7 +1,7 @@
 {
   "siteName": "JT",
-  "defaultMetaTitle": "JT Portfolio 2026",
-  "defaultMetaDescription": "Portfolio — JT 2026",
+  "defaultMetaTitle": "Jack Transue — Design Technologist & Full Stack Engineer",
+  "defaultMetaDescription": "Jack Transue — Design Technologist at Amazon. Full stack engineer specializing in B2B/B2C SaaS, web and mobile. Brooklyn, NY.",
   "navItems": [
     { "label": "About", "href": "/about" },
     { "label": "Work", "href": "/work" },

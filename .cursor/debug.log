@@ -1,0 +1,5 @@
+{"location":"middleware.ts","message":"admin request","data":{"pathname":"/admin","hypothesisId":"H1","isConfigRequest":false},"timestamp":1769985586123,"sessionId":"debug-session","hypothesisId":"H1"}
+{"location":"middleware.ts","message":"admin request","data":{"pathname":"/admin","hypothesisId":"H2"},"timestamp":1769985586123,"sessionId":"debug-session","hypothesisId":"H2"}
+{"location":"middleware.ts","message":"admin request","data":{"pathname":"/admin","hypothesisId":"H4"},"timestamp":1769985586123,"sessionId":"debug-session","hypothesisId":"H4"}
+{"location":"middleware.ts","message":"admin request","data":{"pathname":"/admin","hypothesisId":"H3","method":"GET"},"timestamp":1769985586123,"sessionId":"debug-session","hypothesisId":"H3"}
+{"location":"middleware.ts","message":"admin request","data":{"pathname":"/admin","hypothesisId":"H5"},"timestamp":1769985586123,"sessionId":"debug-session","hypothesisId":"H5"}

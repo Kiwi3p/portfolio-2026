@@ -1,19 +1,12 @@
 ---
-title: "OUR STOCK LISTS"
+title: "GET IN TOUCH"
 regions:
-  - region: "USA"
+  - region: "Connect"
     items:
-      - {
-          name: "THE ARTISANAL GROCER",
-          email: "HELLO@EXAMPLE.COM",
-          phone: "415-123-4567",
-        }
-  - region: "EUROPE"
-    items:
-      - { name: "LE MARCHE BIO", email: "HELLO@EXAMPLE.COM" }
-  - region: "ASIA"
-    items:
-      - { name: "KURASHI & CO.", email: "HELLO@EXAMPLE.COM" }
-midPhone: "(646) 555-4567"
-midEmail: "HELLO@EXAMPLE.COM"
+      - { name: "LinkedIn", url: "https://www.linkedin.com/in/jack-transue/" }
+      - { name: "GitHub", url: "https://github.com/Kiwi3p" }
+midPhone: null
+midEmail: null
 ---
+
+Reach out for opportunities, collaboration, or just to say hi. Message me on LinkedIn — I'd love to connect.

@@ -4,11 +4,13 @@ import { JaggedDivider } from "./JaggedDivider";
 export function FounderBlock({
   name,
   imageSrc,
-  imageAlt = "Founder",
+  imageAlt = "Portrait",
+  label = "ABOUT",
 }: {
   name: string;
   imageSrc?: string | null;
   imageAlt?: string;
+  label?: string;
 }) {
   return (
     <section className="w-full bg-[var(--color-bg3)]">
@@ -23,12 +25,12 @@ export function FounderBlock({
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-[var(--color-accent)]/80 text-[var(--color-white)]/60">
-            <span className="text-caption-style uppercase">Founder image</span>
+            <span className="text-caption-style uppercase">Portrait</span>
           </div>
         )}
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent px-6 pb-6 pt-16 md:px-8 md:pb-8 lg:px-12">
           <p className="text-caption-style mb-1 text-[var(--color-white)] uppercase">
-            FOUNDER
+            {label}
           </p>
           <p className="text-heading-2 text-[var(--color-white)]">{name}</p>
         </div>

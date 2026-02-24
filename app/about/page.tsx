@@ -9,12 +9,12 @@ import { AboutMidSection } from "@/app/components/AboutMidSection";
 import { getGlobal, getAboutPage } from "@/app/lib/content";
 
 const defaultRecognition: RecognitionItem[] = [
-  { year: "2025", label: "BEST PORTFOLIO — AWARD NAME" },
-  { year: "2025", label: "GOLD MEDAL — DESIGN CATEGORY" },
-  { year: "2024", label: "BEST SUSTAINABLE PACKAGING" },
-  { year: "2024", label: "EDITOR'S CHOICE — BEST SITE" },
-  { year: "2024", label: "MOST ELEGANT UX" },
-  { year: "2024", label: "BEST LOW & NO ALCOHOL BEVERAGE" },
+  { year: "2025", label: "DESIGN TECHNOLOGIST — AMAZON" },
+  { year: "2024", label: "INTEGRATION ENGINEER — SURFSIDE" },
+  { year: "2023", label: "SOFTWARE ENGINEER — STOVA" },
+  { year: "2022", label: "SENIOR FULL STACK — SUPERFLY" },
+  { year: "2020", label: "FOUNDING ENGINEER — HERO GALAXY NFT" },
+  { year: "2020", label: "WEB DEVELOPMENT — IRONHACK CERTIFIED" },
 ];
 
 export default async function AboutPage() {
@@ -37,8 +37,9 @@ export default async function AboutPage() {
           <Recognition items={recognitionItems} />
           <div className="flex flex-col">
             <FounderBlock
-              name={about?.founderName ?? "MIKE VERA"}
+              name={about?.founderName ?? "JACK TRANSUE"}
               imageSrc={about?.founderImage ?? null}
+              label="ABOUT"
             />
             <ContactBlock
               phone={about?.contactPhone}

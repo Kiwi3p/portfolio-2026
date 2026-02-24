@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: owner/repo
+  repo: Kiwi3p/portfolio-2026
   branch: main
 
 media_folder: "public/images/uploads"
@@ -147,6 +147,7 @@ collections:
     folder: "content/projects"
     create: true
     slug: "{{slug}}"
+    summary: "{{title}}"
     fields:
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Title", name: "title", widget: "string" }

@@ -98,17 +98,29 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
           </section>
         )}
 
-        {project.liveUrl && (
+        {(project.liveUrl || project.githubUrl) && (
           <section className="w-full bg-[var(--color-bg)] px-6 pb-16 md:px-12 md:pb-24 lg:px-16 lg:pb-32">
-            <div className="mx-auto max-w-4xl text-center">
-              <Link
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full border-2 border-[var(--color-black)] bg-[var(--color-white)] px-8 py-3 text-link-style text-[18px] uppercase text-[var(--color-black)] transition-colors hover:bg-[var(--color-black)] hover:text-[var(--color-white)] md:text-[20px]"
-              >
-                View live site
-              </Link>
+            <div className="mx-auto flex max-w-4xl flex-wrap justify-center gap-4">
+              {project.liveUrl && (
+                <Link
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full border-2 border-[var(--color-black)] bg-[var(--color-white)] px-8 py-3 text-link-style text-[18px] uppercase text-[var(--color-black)] transition-colors hover:bg-[var(--color-black)] hover:text-[var(--color-white)] md:text-[20px]"
+                >
+                  View live site
+                </Link>
+              )}
+              {project.githubUrl && (
+                <Link
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full border-2 border-[var(--color-black)] bg-transparent px-8 py-3 text-link-style text-[18px] uppercase text-[var(--color-black)] transition-colors hover:bg-[var(--color-black)] hover:text-[var(--color-white)] md:text-[20px]"
+                >
+                  View on GitHub
+                </Link>
+              )}
             </div>
           </section>
         )}

@@ -1,17 +1,21 @@
 ---
-heroStatement: "JT REPRESENTS A NEW ERA OF CREATIVE DEVELOPMENT, WHERE CRAFT AND FUNCTIONALITY CONVERGE."
+heroStatement: "FULL STACK ENGINEER AND DESIGN TECHNOLOGIST. TEN YEARS BRIDGING CRAFT AND FUNCTIONALITY ACROSS B2B/B2C SAAS, WEB APPS, AND MOBILE."
 recognitionItems:
-  - { year: "2025", label: "BEST PORTFOLIO — AWARD NAME" }
-  - { year: "2025", label: "GOLD MEDAL — DESIGN CATEGORY" }
-  - { year: "2024", label: "BEST SUSTAINABLE PACKAGING" }
-  - { year: "2024", label: "EDITOR'S CHOICE — BEST SITE" }
-  - { year: "2024", label: "MOST ELEGANT UX" }
-  - { year: "2024", label: "BEST LOW & NO ALCOHOL BEVERAGE" }
-founderName: "MIKE VERA"
+  - { year: "2025", label: "DESIGN TECHNOLOGIST — AMAZON" }
+  - { year: "2024", label: "INTEGRATION ENGINEER — SURFSIDE" }
+  - { year: "2023", label: "SOFTWARE ENGINEER — STOVA (AVENTRI)" }
+  - { year: "2022", label: "SENIOR FULL STACK / FRONTEND — SUPERFLY" }
+  - {
+      year: "2021",
+      label: "FRONTEND DEVELOPER — SUPERFLY (OUTSIDE LANDS, THE OFFICE EXPERIENCE)",
+    }
+  - { year: "2020", label: "FOUNDING ENGINEER — HERO GALAXY NFT" }
+  - { year: "2020", label: "WEB DEVELOPMENT — IRONHACK CERTIFIED" }
+founderName: "JACK TRANSUE"
 founderImage: null
-contactPhone: "415-555-4567"
-contactEmail: "HELLO@EXAMPLE.COM"
-contactSocial: "@FIGMA"
+contactPhone: null
+contactEmail: null
+contactSocial: "https://www.linkedin.com/in/jack-transue/"
 midSectionImage: null
-establishedYear: "2005"
+establishedYear: "2016"
 ---

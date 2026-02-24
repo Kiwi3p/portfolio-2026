@@ -92,6 +92,7 @@ export type ContactRegionItem = {
   name?: string;
   email?: string;
   phone?: string;
+  url?: string;
 };
 export type ContactRegion = { region: string; items: ContactRegionItem[] };
 
@@ -126,6 +127,7 @@ function mapFileToProject(
     heroImage: heroImage ?? null,
     videoUrl: (data.videoUrl as string) ?? null,
     liveUrl: (data.liveUrl as string) ?? null,
+    githubUrl: (data.githubUrl as string) ?? null,
   };
 }
 

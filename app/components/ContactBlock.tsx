@@ -35,7 +35,18 @@ export function ContactBlock({
         {social && (
           <li className="text-body-style">
             <span className="text-caption-style mr-2 uppercase">Social:</span>
-            {social}
+            {social.startsWith("http") ? (
+              <a
+                href={social}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:opacity-80"
+              >
+                {social.replace(/^https?:\/\//, "")}
+              </a>
+            ) : (
+              social
+            )}
           </li>
         )}
       </ul>

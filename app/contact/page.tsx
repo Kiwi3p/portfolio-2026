@@ -9,22 +9,11 @@ import { getGlobal, getContactPage } from "@/app/lib/content";
 
 const defaultRegions: ContactRegion[] = [
   {
-    region: "USA",
+    region: "Connect",
     items: [
-      {
-        name: "THE ARTISANAL GROCER",
-        email: "HELLO@EXAMPLE.COM",
-        phone: "415-123-4567",
-      },
+      { name: "LinkedIn", url: "https://www.linkedin.com/in/jack-transue/" },
+      { name: "GitHub", url: "https://github.com/Kiwi3p" },
     ],
-  },
-  {
-    region: "EUROPE",
-    items: [{ name: "LE MARCHE BIO", email: "HELLO@EXAMPLE.COM" }],
-  },
-  {
-    region: "ASIA",
-    items: [{ name: "KURASHI & CO.", email: "HELLO@EXAMPLE.COM" }],
   },
 ];
 
@@ -37,7 +26,7 @@ export default async function ContactPage() {
       <Header navItems={global?.navItems} siteName={global?.siteName} />
       <main>
         <ContactPageContent
-          title={contact?.title ?? "OUR STOCK LISTS"}
+          title={contact?.title ?? "GET IN TOUCH"}
           regions={regions}
           backgroundImageSrc={null}
         />

@@ -7,6 +7,7 @@ export type Project = {
   heroImage?: string | null;
   videoUrl?: string | null;
   liveUrl?: string | null;
+  githubUrl?: string | null;
 };
 
 const projects: Project[] = [

@@ -15,7 +15,12 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen">
-      <Header navItems={global?.navItems} siteName={global?.siteName} />
+      <Header
+        navItems={global?.navItems}
+        siteName={global?.siteName}
+        subhead={home?.heroSubtext}
+        largeTitle
+      />
       <main>
         <Hero
           headline={home?.heroHeadline}

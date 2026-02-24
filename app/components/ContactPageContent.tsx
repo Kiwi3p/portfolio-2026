@@ -4,6 +4,7 @@ export type ContactRegionItem = {
   name?: string;
   email?: string;
   phone?: string;
+  url?: string;
 };
 
 export type ContactRegion = {
@@ -59,8 +60,20 @@ export function ContactPageContent({
                       key={j}
                       className="text-body-style flex flex-wrap gap-x-4 gap-y-1 text-[var(--color-body)]"
                     >
-                      {item.name && <span>{item.name}</span>}
-                      {item.email && (
+                      {item.name &&
+                        (item.url ? (
+                          <a
+                            href={item.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline underline-offset-2 hover:opacity-80"
+                          >
+                            {item.name}
+                          </a>
+                        ) : (
+                          <span>{item.name}</span>
+                        ))}
+                      {item.email && !item.url && (
                         <a
                           href={`mailto:${item.email}`}
                           className="underline underline-offset-2 hover:opacity-80"
