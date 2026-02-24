@@ -2,15 +2,28 @@
 slug: coca-cola-holiday-2025
 title: Coca Cola Holiday 2025
 shortDescription: "Second-screen sync for Fire TV and mobile — QR code sign-in and a multiplayer quiz that boosted dwell time 30%."
-image: null
-heroImage: null
-videoUrl: null
-liveUrl: null
+image: /images/uploads/coke-5.png
+heroImage: /images/uploads/coke-5.png
+videoUrl: /images/uploads/coke-vid.mp4
+liveUrl: "https://coca-cola-holiday-2025.netlify.app/"
 githubUrl: null
 sectionImages:
-  - /images/placeholder-architecture.svg
   - null
-  - /images/placeholder-outcomes.svg
+  - /images/uploads/coke-4.png
+  - null
+  - /images/uploads/coke-2.png
+sectionRightImages:
+  - null
+  - null
+  - /images/uploads/coke-3.png
+  - null
+sectionGalleries:
+  - - /images/uploads/flowchart-1.png
+    - /images/uploads/flowchart-2.png
+    - /images/uploads/flowchart-3.png
+    - /images/uploads/flowchart-4.png
+  - null
+  - null
   - null
 ---
 

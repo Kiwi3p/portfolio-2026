@@ -1,6 +1,7 @@
 import { Header } from "@/app/components/Header";
 import { Footer } from "@/app/components/Footer";
 import { ProjectCard } from "@/app/components/ProjectCard";
+import { AnimatedSection } from "@/app/components/AnimatedSection";
 import { getAllProjects } from "@/app/lib/content";
 import { getGlobal } from "@/app/lib/content";
 
@@ -11,7 +12,10 @@ export default async function WorkPage() {
     <div className="min-h-screen">
       <Header navItems={global?.navItems} siteName={global?.siteName} />
       <main>
-        <section className="w-full bg-[var(--color-bg)] px-6 py-16 md:px-12 md:py-24 lg:px-16 lg:py-32">
+        <AnimatedSection
+          as="section"
+          className="w-full bg-[var(--color-bg)] px-6 py-16 md:px-12 md:py-24 lg:px-16 lg:py-32"
+        >
           <div className="mx-auto max-w-7xl">
             <h1 className="text-heading-2 mb-12 text-[var(--color-headline)] md:mb-16">
               WORK
@@ -28,7 +32,7 @@ export default async function WorkPage() {
               ))}
             </div>
           </div>
-        </section>
+        </AnimatedSection>
         <Footer />
       </main>
     </div>

@@ -2,11 +2,17 @@
 slug: philips-lumea
 title: Philips Lumea
 shortDescription: "Product detail page with a dialog-tree chatbot and 3D product experience. A/B testing drove a 45% increase in dwell time and more add-to-cart."
-image: null
-heroImage: null
+image: /images/uploads/lumea-1.png
+heroImage: /images/uploads/lumea-1.png
 videoUrl: null
-liveUrl: null
+liveUrl: "https://www.amazon.com/stores/page/9AC70574-55E8-4645-AB61-17BAC8130879"
 githubUrl: null
+sectionImages:
+  - null
+  - /images/uploads/lumea-3.png
+sectionRightImages:
+  - /images/uploads/lumea-2.png
+  - null
 ---
 
 On the surface, this appears to be a typical product detail page — just with better styling. Under the surface, it’s much more complex.

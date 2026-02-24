@@ -17,7 +17,7 @@ export function ProjectCard({
   return (
     <article className="group">
       <Link href={`/work/${slug}`} className="block">
-        <div className="mb-4 aspect-[4/3] w-full overflow-hidden rounded border border-[var(--color-divider-light)] bg-[var(--color-accent)]/5">
+        <div className="mb-4 aspect-[4/3] w-full overflow-hidden rounded bg-[var(--color-accent)]/5">
           {image ? (
             <Image
               src={image}

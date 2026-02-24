@@ -5,6 +5,8 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Header } from "@/app/components/Header";
 import { Footer } from "@/app/components/Footer";
+import { SectionImageGallery } from "@/app/components/SectionImageGallery";
+import { AnimatedSection } from "@/app/components/AnimatedSection";
 import { getProjectBySlug, getAllProjects } from "@/app/lib/content";
 import { getGlobal } from "@/app/lib/content";
 
@@ -70,7 +72,10 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
     <div className="min-h-screen">
       <Header navItems={global?.navItems} siteName={global?.siteName} />
       <main>
-        <section className="relative w-full aspect-[21/9] min-h-[240px] bg-[var(--color-bg3)] md:min-h-[320px] lg:min-h-[400px]">
+        <AnimatedSection
+          as="section"
+          className="relative w-full aspect-[21/9] min-h-[240px] bg-[var(--color-bg3)] md:min-h-[320px] lg:min-h-[400px]"
+        >
           {heroImage ? (
             <Image
               src={heroImage}
@@ -87,10 +92,13 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
               </span>
             </div>
           )}
-        </section>
+        </AnimatedSection>
 
         {/* Overview — project title + intro */}
-        <section className="w-full bg-[var(--color-bg)] px-6 py-16 md:px-12 md:py-24 lg:px-16 lg:py-32">
+        <AnimatedSection
+          as="section"
+          className="w-full bg-[var(--color-bg)] px-6 py-16 md:px-12 md:py-24 lg:px-16 lg:py-32"
+        >
           <div className="mx-auto max-w-4xl">
             <h1 className="text-heading-2 mb-8 text-[var(--color-headline)]">
               {project.title}
@@ -109,70 +117,106 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
               )
             ) : null}
           </div>
-        </section>
+        </AnimatedSection>
 
         {/* Additional sections from ## headings */}
         {contentSections.map((sec, i) => {
           const isAlt = i % 2 === 0;
           const sectionImage = project.sectionImages?.[i];
+          const sectionRightImage = project.sectionRightImages?.[i];
+          const sectionGallery = project.sectionGalleries?.[i];
+          const useRightImageLayout = !!sectionRightImage;
+          const useGalleryLayout =
+            Array.isArray(sectionGallery) && sectionGallery.length > 0;
+          const showSectionImageAbove = sectionImage && !useRightImageLayout;
           return (
-            <section
+            <AnimatedSection
               key={sec.title ?? i}
+              as="section"
               className={
                 isAlt
                   ? "w-full bg-[var(--color-bg2)] px-6 py-16 md:px-12 md:py-24 lg:px-16 lg:py-32"
                   : "w-full bg-[var(--color-bg)] px-6 py-16 md:px-12 md:py-24 lg:px-16 lg:py-32"
               }
             >
-              <div className="mx-auto max-w-4xl">
-                {sectionImage && (
-                  <div className="mb-10 aspect-[21/9] w-full overflow-hidden rounded border border-[var(--color-divider-light)] md:mb-12">
+              <div
+                className={
+                  useRightImageLayout
+                    ? "mx-auto grid max-w-6xl grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start lg:gap-12"
+                    : "mx-auto max-w-4xl"
+                }
+              >
+                <div className={useRightImageLayout ? "min-w-0" : undefined}>
+                  {showSectionImageAbove && (
+                    <div className="relative mb-10 w-full overflow-hidden rounded md:mb-12">
+                      <div className="relative aspect-[4/3] w-full">
+                        <Image
+                          src={sectionImage}
+                          alt={sec.title ?? "Section"}
+                          fill
+                          className="object-contain object-center"
+                          sizes="(max-width: 896px) 100vw, 896px"
+                        />
+                      </div>
+                    </div>
+                  )}
+                  {sec.title && (
+                    <h2 className="text-heading-3 mb-8 text-[var(--color-headline)] md:mb-10 first:mt-0">
+                      {isAlt ? (
+                        <span className="text-[var(--color-headline-on-bg2)]">
+                          {sec.title}
+                        </span>
+                      ) : (
+                        sec.title
+                      )}
+                    </h2>
+                  )}
+                  {sec.body ? (
+                    <div
+                      className={
+                        isAlt
+                          ? `${proseClasses} ${proseOnDark}`
+                          : `${proseClasses} ${proseLight}`
+                      }
+                    >
+                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                        {sec.body}
+                      </ReactMarkdown>
+                    </div>
+                  ) : null}
+                  {useGalleryLayout && (
+                    <SectionImageGallery
+                      images={sectionGallery}
+                      sectionTitle={sec.title}
+                    />
+                  )}
+                </div>
+                {sectionRightImage && (
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded bg-[var(--color-bg)] lg:min-h-0">
                     <Image
-                      src={sectionImage}
-                      alt={sec.title ?? "Section"}
-                      width={840}
-                      height={360}
-                      className="h-full w-full object-cover"
-                      sizes="(max-width: 896px) 100vw, 896px"
+                      src={sectionRightImage}
+                      alt={sec.title ?? "Diagram"}
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                   </div>
                 )}
-                {sec.title && (
-                  <h2 className="text-heading-3 mb-8 text-[var(--color-headline)] md:mb-10 first:mt-0">
-                    {isAlt ? (
-                      <span className="text-[var(--color-headline-on-bg2)]">
-                        {sec.title}
-                      </span>
-                    ) : (
-                      sec.title
-                    )}
-                  </h2>
-                )}
-                {sec.body ? (
-                  <div
-                    className={
-                      isAlt
-                        ? `${proseClasses} ${proseOnDark}`
-                        : `${proseClasses} ${proseLight}`
-                    }
-                  >
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                      {sec.body}
-                    </ReactMarkdown>
-                  </div>
-                ) : null}
               </div>
-            </section>
+            </AnimatedSection>
           );
         })}
 
         {project.videoUrl && (
-          <section className="w-full bg-[var(--color-bg)] px-6 py-16 md:px-12 md:py-24 lg:px-16 lg:py-32">
+          <AnimatedSection
+            as="section"
+            className="w-full bg-[var(--color-bg)] px-6 py-16 md:px-12 md:py-24 lg:px-16 lg:py-32"
+          >
             <div className="mx-auto max-w-4xl">
               <h2 className="text-heading-3 mb-8 text-[var(--color-headline)]">
-                Video
+                Demo
               </h2>
-              <div className="aspect-video w-full overflow-hidden rounded border border-[var(--color-divider-light)] bg-[var(--color-bg3)]">
+              <div className="aspect-video w-full overflow-hidden rounded bg-[var(--color-bg3)]">
                 {isEmbedUrl(project.videoUrl) ? (
                   <iframe
                     src={project.videoUrl}
@@ -192,11 +236,14 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
                 )}
               </div>
             </div>
-          </section>
+          </AnimatedSection>
         )}
 
         {(project.liveUrl || project.githubUrl) && (
-          <section className="w-full pt-10 bg-[var(--color-bg)] px-6 pb-16 md:px-12 md:pb-24 lg:px-16 lg:pb-32">
+          <AnimatedSection
+            as="section"
+            className="w-full pt-10 bg-[var(--color-bg)] px-6 pb-16 md:px-12 md:pb-24 lg:px-16 lg:pb-32"
+          >
             <div className="mx-auto flex max-w-4xl flex-wrap justify-center gap-4">
               {project.liveUrl && (
                 <Link
@@ -219,7 +266,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
                 </Link>
               )}
             </div>
-          </section>
+          </AnimatedSection>
         )}
 
         <Footer />

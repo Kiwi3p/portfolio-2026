@@ -7,6 +7,7 @@ import {
   Montserrat,
 } from "next/font/google";
 import { getGlobal } from "@/app/lib/content";
+import { PageTransition } from "@/app/components/PageTransition";
 import "./globals.css";
 
 const staatliches = Staatliches({
@@ -58,7 +59,9 @@ export default function RootLayout({
       lang="en"
       className={`${staatliches.variable} ${jaro.variable} ${figtree.variable} ${geist.variable} ${montserrat.variable}`}
     >
-      <body className="min-h-screen antialiased">{children}</body>
+      <body className="min-h-screen antialiased">
+        <PageTransition>{children}</PageTransition>
+      </body>
     </html>
   );
 }

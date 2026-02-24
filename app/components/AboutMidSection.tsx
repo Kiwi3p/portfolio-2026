@@ -20,7 +20,7 @@ export function AboutMidSection({
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center text-[var(--color-accent-on-bg2)]/40">
-            <span className="text-caption-style uppercase">Image</span>
+            {/* <span className="text-caption-style uppercase">Image</span> */}
           </div>
         )}
       </div>

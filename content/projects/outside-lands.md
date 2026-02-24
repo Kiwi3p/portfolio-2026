@@ -7,6 +7,8 @@ heroImage: /images/OSL-wide.png
 videoUrl: null
 liveUrl: "http://2021.sfoutsidelands.com"
 githubUrl: null
+sectionRightImages:
+  - /images/uploads/OSL-Diagram.png
 ---
 
 After going through a site redesign a year prior, Superfly tasked me to modify this Vue-based app for the 2021 Outside Lands music festival in San Francisco.

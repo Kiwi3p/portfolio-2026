@@ -55,6 +55,7 @@ export type HomePageData = {
   aboutCtaContact?: string;
   ctaHeadline?: string;
   ctaBody?: string;
+  ctaImage?: string | null;
   ctaEmailLabel?: string;
   ctaEmailHref?: string;
   ctaLinkedInLabel?: string;
@@ -119,6 +120,12 @@ function mapFileToProject(
   const image = data.image as string | undefined;
   const heroImage = data.heroImage as string | undefined;
   const sectionImages = data.sectionImages as (string | null)[] | undefined;
+  const sectionRightImages = data.sectionRightImages as
+    | (string | null)[]
+    | undefined;
+  const sectionGalleries = data.sectionGalleries as
+    | (string[] | null)[]
+    | undefined;
   return {
     slug,
     title: (data.title as string) ?? "",
@@ -131,6 +138,12 @@ function mapFileToProject(
     liveUrl: (data.liveUrl as string) ?? null,
     githubUrl: (data.githubUrl as string) ?? null,
     sectionImages: Array.isArray(sectionImages) ? sectionImages : undefined,
+    sectionRightImages: Array.isArray(sectionRightImages)
+      ? sectionRightImages
+      : undefined,
+    sectionGalleries: Array.isArray(sectionGalleries)
+      ? sectionGalleries
+      : undefined,
   };
 }
 

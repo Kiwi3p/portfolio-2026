@@ -10,6 +10,10 @@ export type Project = {
   githubUrl?: string | null;
   /** Optional image per content section (by index). Shown in orange/tan sections when present. */
   sectionImages?: (string | null)[];
+  /** Optional image to show to the right of a section (by index). Layout: text left, image right. */
+  sectionRightImages?: (string | null)[];
+  /** Optional gallery of images per section (by index). Rendered below section body: row on desktop, column on mobile; click opens lightbox. */
+  sectionGalleries?: (string[] | null)[];
 };
 
 const projects: Project[] = [

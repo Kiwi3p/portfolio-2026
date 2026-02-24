@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 type CTAProps = {
   headline?: string;
@@ -7,6 +8,7 @@ type CTAProps = {
   emailHref?: string;
   linkedInLabel?: string;
   linkedInHref?: string;
+  imageSrc?: string | null;
 };
 
 const defaults: CTAProps = {
@@ -16,6 +18,7 @@ const defaults: CTAProps = {
   emailHref: "mailto:hello@example.com",
   linkedInLabel: "LinkedIn",
   linkedInHref: "#",
+  imageSrc: null,
 };
 
 export function CTA({
@@ -25,6 +28,7 @@ export function CTA({
   emailHref,
   linkedInLabel,
   linkedInHref,
+  imageSrc,
 }: CTAProps = {}) {
   const h = headline ?? defaults.headline;
   const b = body ?? defaults.body;
@@ -32,6 +36,7 @@ export function CTA({
   const emailLink = emailHref ?? defaults.emailHref ?? "#";
   const linkedIn = linkedInLabel ?? defaults.linkedInLabel;
   const linkedInLink = linkedInHref ?? defaults.linkedInHref ?? "#";
+  const src = imageSrc ?? defaults.imageSrc;
 
   return (
     <section
@@ -61,11 +66,21 @@ export function CTA({
         </div>
       </div>
       <div className="relative min-h-[240px] bg-[var(--color-accent-on-bg2)]/20 md:min-h-[320px] lg:min-h-[480px]">
-        <div className="absolute inset-0 flex items-center justify-center text-[var(--color-headline-on-bg2)]/30">
-          <span className="text-sm uppercase tracking-widest">
-            Optional image
-          </span>
-        </div>
+        {src ? (
+          <Image
+            src={src}
+            alt=""
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center text-[var(--color-headline-on-bg2)]/30">
+            <span className="text-sm uppercase tracking-widest">
+              Optional image
+            </span>
+          </div>
+        )}
       </div>
     </section>
   );
