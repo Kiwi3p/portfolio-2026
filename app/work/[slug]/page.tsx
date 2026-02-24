@@ -196,7 +196,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
         )}
 
         {(project.liveUrl || project.githubUrl) && (
-          <section className="w-full bg-[var(--color-bg)] px-6 pb-16 md:px-12 md:pb-24 lg:px-16 lg:pb-32">
+          <section className="w-full pt-10 bg-[var(--color-bg)] px-6 pb-16 md:px-12 md:pb-24 lg:px-16 lg:pb-32">
             <div className="mx-auto flex max-w-4xl flex-wrap justify-center gap-4">
               {project.liveUrl && (
                 <Link

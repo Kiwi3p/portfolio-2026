@@ -1,10 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 
 type HeroProps = {
   headline?: string;
   subtext?: string;
   ctaText?: string;
   ctaHref?: string;
+  imageSrc?: string | null;
 };
 
 const defaults: HeroProps = {
@@ -12,13 +14,21 @@ const defaults: HeroProps = {
   subtext: "Creative developer crafting thoughtful digital experiences.",
   ctaText: "View Work",
   ctaHref: "/work",
+  imageSrc: null,
 };
 
-export function Hero({ headline, subtext, ctaText, ctaHref }: HeroProps = {}) {
+export function Hero({
+  headline,
+  subtext,
+  ctaText,
+  ctaHref,
+  imageSrc,
+}: HeroProps = {}) {
   const h = headline ?? defaults.headline;
   const s = subtext ?? defaults.subtext;
   const cta = ctaText ?? defaults.ctaText;
   const href = ctaHref ?? defaults.ctaHref ?? "/work";
+  const src = imageSrc ?? defaults.imageSrc;
 
   return (
     <section className="grid w-full grid-cols-1 lg:grid-cols-2">
@@ -34,10 +44,23 @@ export function Hero({ headline, subtext, ctaText, ctaHref }: HeroProps = {}) {
           {cta}
         </Link>
       </div>
-      <div className="relative min-h-[280px] bg-[var(--color-bg3)] md:min-h-[400px] lg:min-h-[520px]">
-        <div className="absolute inset-0 flex items-center justify-center text-[var(--color-body-on-bg2)]/40">
-          <span className="text-sm uppercase tracking-widest">Hero image</span>
-        </div>
+      <div className="relative min-h-[560px] bg-[var(--color-bg3)] md:min-h-[600px] lg:min-h-[800px]">
+        {src ? (
+          <Image
+            src={src}
+            alt=""
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            priority
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center text-[var(--color-body-on-bg2)]/40">
+            <span className="text-sm uppercase tracking-widest">
+              Hero image
+            </span>
+          </div>
+        )}
       </div>
     </section>
   );

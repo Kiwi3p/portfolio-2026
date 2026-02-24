@@ -27,6 +27,7 @@ export default async function Home() {
           subtext={home?.heroSubtext}
           ctaText={home?.heroCtaText}
           ctaHref="/work"
+          imageSrc={home?.heroImage}
         />
         <About
           heading={home?.aboutHeading}

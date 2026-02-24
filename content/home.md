@@ -2,6 +2,7 @@
 heroHeadline: "JACK TRANSUE"
 heroSubtext: "Design Technologist at Amazon. Full stack engineer crafting web, TV, and mobile experiences."
 heroCtaText: "View Work"
+heroImage: "/images/uploads/thas-me.jpeg"
 aboutHeading: "ABOUT"
 aboutBody: "I'm a design technologist with extensive background in in the oddities, particularly in web and mobile applications. I'm at my best when collaborating with a like minded product designer, building out ground breaking projects that intersect the latest technology with the latest trends."
 aboutCtaLearn: "Learn more"

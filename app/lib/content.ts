@@ -48,6 +48,7 @@ export type HomePageData = {
   heroHeadline?: string;
   heroSubtext?: string;
   heroCtaText?: string;
+  heroImage?: string | null;
   aboutHeading?: string;
   aboutBody?: string;
   aboutCtaLearn?: string;
