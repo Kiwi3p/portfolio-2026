@@ -8,7 +8,6 @@ videoUrl: null
 liveUrl: "https://kiwi3p.github.io/2020holiday_Presents_300x250/"
 githubUrl: "https://github.com/Kiwi3p/2020holiday_Presents_300x250"
 ---
-
 This is the project that started it all for me.
 
 After years of entertainment industry experience administrating and building out post-production server hardware/software, our agency started getting requests for video advertisements in large-scale deliveries. This meant we needed animations, video edits, and exports to be done in several different markets at once.
