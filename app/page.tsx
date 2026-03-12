@@ -42,7 +42,6 @@ export default async function Home() {
         </AnimatedSection>
         <AnimatedSection>
           <Work projects={projects} />
-          
         </AnimatedSection>
         <AnimatedSection>
           <CTA
